@@ -737,6 +737,7 @@
           selectedColor = tinycolor(selectedColor).toHex();
           $(myElements.thisEl).val(selectedColor);
           $(myElements.thisEl).trigger("change");
+          methods.updatePreview(myElements.thisEl);
           methods.addToSavedColors(selectedColor,mySavedColorsInfo,myElements.savedColorsContent);
           methods.closeDropdown(myElements.colorPreviewButton,myElements.colorMenu); // close the dropdown
         },
@@ -1203,6 +1204,7 @@
             var selectedColor = tinycolor($(this).css("background-color")).toHex();
             $(myElements.thisEl).val(selectedColor);
             $(myElements.thisEl).trigger("change");
+            methods.updatePreview(myElements.thisEl);
             methods.addToSavedColors(selectedColor,mySavedColorsInfo,myElements.savedColorsContent);
             methods.closeDropdown(myElements.colorPreviewButton,myElements.colorMenu); // close the dropdown
           });
@@ -1225,6 +1227,7 @@
                 $thisEl.attr("class").split("#")[1];
               $(myElements.thisEl).val(selectedColor);
               $(myElements.thisEl).trigger("change");
+              methods.updatePreview(myElements.thisEl);
               methods.closeDropdown(myElements.colorPreviewButton,myElements.colorMenu);
               methods.addToSavedColors(selectedColor,mySavedColorsInfo,myElements.savedColorsContent);
             }
